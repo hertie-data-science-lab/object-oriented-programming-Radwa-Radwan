@@ -1,20 +1,20 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Feb 12 18:02:49 2023
 
-@author: Hannah
+@author: Radwa Abdelsalam
 """
 
-from abc import ABCMeta, abstractmethod
-import numpy as np
+class Creature:
+    pass
 
-class Creature(metaclass=ABCMeta):
-    
-  
-        
+
 class Bear(Creature):
+    def __str__(self):
+        return "Bear"
 
- 
-        
+
 class Fish(Creature):
-    
+    def __str__(self):
+        return "Fish"
+
+

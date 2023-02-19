@@ -1,14 +1,31 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Feb 12 18:05:41 2023
 
-@author: Hannah
+@author: Radwa Abdelsalam
 """
 
+
 from River import River
+from Creatures import Bear
+from Creatures import Fish
+from collections import deque
+import random
 
-river = River(5)
-river.initialize()
-river.display()
 
-river.next_time_step(10)
+n_rooms = [None]*15
+n_fish = 5
+n_bears = 5
+eco = random.sample(range(len(n_rooms)), n_fish+n_bears)
+for position in eco[:n_fish]:
+    n_rooms[position] = Fish()
+for position in eco[n_fish:]:
+    n_rooms[position] = Bear()
+
+river = River(n_rooms)
+
+
+for i in range(10):
+    river.display()
+    river.move_fish()
+    river.move_bears()
+    print("\n")
